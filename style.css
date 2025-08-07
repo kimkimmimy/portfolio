@@ -1,4 +1,4 @@
-
+/* --- ตัวหนังสือและพื้นฐาน --- */
 body {
   margin: 0;
   font-family: 'Kanit', sans-serif;
@@ -6,6 +6,12 @@ body {
   color: #fff;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- navbar --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -24,71 +30,86 @@ body {
 .navbar nav a {
   margin: 0 12px;
   color: white;
-  text-decoration: none;
   font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 .navbar nav a:hover {
   color: #64b5f6;
+  border-bottom-color: #64b5f6;
 }
 
+/* active link */
+.navbar nav a.active {
+  color: #64b5f6;
+  font-weight: 700;
+  border-bottom-color: #64b5f6;
+}
+
+/* ปุ่มเข้าสู่ระบบ / สมัครสมาชิก */
 .login-btns a {
   margin-left: 10px;
   background: #2196f3;
   color: black;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
-  text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+.login-btns a:hover {
+  background: #64b5f6;
+  color: black;
+}
+
+/* --- ส่วน Hero หน้าแรก --- */
 .hero {
   background: #1e293b;
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.hero-text {
   text-align: center;
-  background: rgba(0,0,0,0.5);
-  padding: 20px;
-  border-radius: 12px;
+  padding: 0 20px;
 }
 
-.grid-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 40px;
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
-.card {
-  background: #1f1f1f;
-  padding: 30px;
-  text-align: center;
+.hero-text p {
   font-size: 1.2rem;
-  font-weight: bold;
+  color: #a0aec0;
+}
+
+/* --- ส่วนเกี่ยวกับ, เกียรติบัตร, โปรเจกต์, ติดต่อ --- */
+section.about,
+section.certificates,
+section.projects,
+section.contact {
+  padding: 40px;
+  margin: 40px;
+  background: #121820;
   border-radius: 12px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: white;
+  color: #cfd8dc;
 }
 
-.card:hover {
-  transform: scale(1.05);
+section.about img {
+  width: 220px;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 20px;
 }
 
-.blue { background: #2196f3; }
-.darkblue { background: #0d47a1; }
-.skyblue { background: #03a9f4; }
-.teal { background: #00838f; }
-
+/* --- ส่วน footer --- */
 footer {
   text-align: center;
   padding: 20px;
   background: #161b22;
   margin-top: 40px;
   color: #aaa;
+  font-size: 0.9rem;
 }
